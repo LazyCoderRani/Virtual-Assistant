@@ -17,7 +17,7 @@
     # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Uncategorized',
-    'version': '0.1',
+    'version': '0.2',
 
     # any module necessary for this one to work correctly
     'depends': ['base','website',],
@@ -25,18 +25,16 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/talking_avatar.xml',
     ],
     'assets': {
         'web.assets_frontend': [
-            'virtual_assistant/static/src/css/assistant.css',
+            'virtual_assistant/static/src/js/streaming-client-api.js',
             
         ]
     },
+    
+ 
     # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
 
 }

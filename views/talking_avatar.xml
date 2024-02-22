@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="menu_assistant" model="website.menu">
+			<field name="name">Talking Avatar</field>
+			<field name="url">/assist</field>
+			<field name="parent_id" ref="website.main_menu" />
+			<field name="sequence" type="int">5</field>
+		</record>
+		<template id="assistant_webpage" name="assistant webpage ">
+			<t t-call="web.layout">
+				<link rel="preconnect" href="https://fonts.googleapis.com"/>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+                <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+				<link rel = "stylesheet" type = "text/css" href ="talking_avatar/static/src/css/assistant.css"/>
+                <script type="text/javascript" src="/talking_avatar/static/src/js/streaming-client-api.js"></script>
+
+                <body>
+                    <!-- adde "id=content" -->
+                    <div id="content">
+                    <!-- added "id=video-wrapper" -->
+                    <div id="video-wrapper">
+                        <div>
+                        <video id="talk-video" width="400" height="400" autoplay="autoplay"></video>
+                        </div>
+                    </div>
+                    <br />
+                    <div id="input-container">
+                        <input type="text" id="user-input-field" placeholder="How can I assist you today?"/>
+                        <hr/> <!-- Add a horizontal rule -->
+                    </div>
+                    <!-- added div#buttons -->
+                    <div id="buttons">
+                        <button id="speak-button" type="button">Speak</button>
+                        <!-- <button id="connect-button" type="button">Connect</button> -->
+                        <button id="talk-button" type="button">Start</button>
+                        <button id="stop-button" type="button">Stop</button>
+                    </div>
+
+                    <!-- added div#status -->
+                    <div id="status">
+                        ICE gathering status: <label id="ice-gathering-status-label"></label><br/>
+                        ICE status: <label id="ice-status-label"></label><br/>
+                        Peer connection status: <label id="peer-status-label"></label><br/>
+                        Signaling status: <label id="signaling-status-label"></label><br/>
+                        Streaming status: <label id="streaming-status-label"></label><br/>
+                        <!-- Recognition status: <label id="instructions"></label><br /> -->
+                        <label id="instructions"></label><br />
+                    </div>
+                    </div>
+
+                    <!-- <script type="module" src="index.js"></script> -->
+                    <!-- <script type="module" src="voice_recognition.js"></script> -->
+                                <!-- <script type="text/javascript" src="/talking_avatar/static/src/js/index.js"></script> -->
+
+                   
+                </body>
+			</t>
+		</template>
+	</data>
+</odoo>
